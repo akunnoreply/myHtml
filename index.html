@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        window.onload = function() {
+            var xhr = new XMLHttpRequest();
+            var url = 'https://3577-37-19-205-151.ngrok-free.app'; // Ganti dengan URL ngrok yang sesuai
+            xhr.open('GET', url, true);
+            xhr.setRequestHeader('ngrok-skip-browser-warning', 'anyvalue'); // Atur header ngrok-skip-browser-warning
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    window.location.href = url; // Redirect ke URL ngrok setelah permintaan berhasil
+                }
+            };
+            xhr.send();
+        };
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
+
+
